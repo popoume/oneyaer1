@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>💌 我们的一周年纪念信 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "KaiTi", "STKaiti", serif;
+      background: #fdf6ec url('OIP.jpg') no-repeat center/cover;
+      overflow: hidden;
+      color: #5a4636;
+      text-align: center;
+    }
+    .intro {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 250, 240, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      transition: opacity 1.5s ease;
+    }
+    .intro h1 {
+      font-size: 2.2em;
+      color: #8b5e3c;
+      margin-bottom: 30px;
+      animation: float 3s ease-in-out infinite;
+    }
+    .intro button {
+      background-color: #f5d1b3;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      color: #5a4636;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    .intro button:hover {
+      background-color: #f8bfa2;
+      transform: scale(1.05);
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .slide, .ending {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      transition: opacity 1s ease;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .active {
+      display: flex;
+      opacity: 1;
+      animation: fadeIn 1.5s ease;
+    }
+    .fade-out {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .slide img {
+      max-width: 90%;
+      max-height: 70vh;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.6s ease;
+    }
+    .slide img:hover {
+      transform: scale(1.03);
+    }
+    .caption {
+      margin-top: 20px;
+      background: rgba(255, 248, 240, 0.85);
+      padding: 15px 25px;
+      border-radius: 12px;
+      border: 1px dashed #e1cdb5;
+      max-width: 800px;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #7a5a4f;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ending h1 {
+      font-size: 2em;
+      color: #8b5e3c;
+      margin-bottom: 20px;
+    }
+    .ending p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #7a5a4f;
+      max-width: 800px;
+    }
+    .music-control {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background-color: rgba(255,255,255,0.7);
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: #5a4636;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      user-select: none;
+      display: none;
+    }
+    .music-control:hover {
+      background-color: rgba(255,255,255,0.9);
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgm" loop>
+    <source src="cay.mp3" type="audio/mpeg">
+  </audio>
+  <div class="music-control" id="musicToggle">🔊 音乐：开</div>
+  <div class="intro" id="intro">
+    <h1>💌 致我最爱的姐姐 💌</h1>
+	<p>姐姐总是说我没有给她写过信<br>可是小狗的字太丑了，那就让电脑帮小狗来做到这些吧</p> 
+	<p>冬天过去又回来，一轮春秋，和姐姐在一起之后姐姐让我知道了我不用把一切压在自己身上，姐姐也让我明白怎么去控制脾气，让小狗变成了更好的小狗。<br>小狗也有很多话想和姐姐说</p>
+    <button id="startButton">点击开启我们的故事</button>
+  </div>
+  <div class="slide"><img src="yinyuejie1.jpg"><div class="caption">和姐姐第一次的“偶遇”，可是小狗特意选的音乐节<br>可惜姐姐辩论没有和小狗一起看太久</div></div>
+  <div class="slide"><img src="huaxue.jpg"><div class="caption">在滑雪场上，姐姐担心自己滑得不好耽误小狗<br>可是在那天，小狗的眼里姐姐的可爱仿佛可以融化漫山大雪</div></div>
+  <div class="slide"><img src="biaobai.jpg"><div class="caption">表白的那天，外面雪厚厚的，铁锅的雾也厚厚的，我们在大家的祝福下走到了一起<br>那天幸福淹没了我</div></div>
+  <div class="slide"><img src="guangsanfu.jpg"><div class="caption">在一起以后，小狗跟着姐姐逛了好多商店<br>虽然小狗搞不懂姐姐在说什么，但看着姐姐开心，小狗也觉得幸福</div></div>
+  <div class="slide"><img src="taiqiu.jpg"><div class="caption">姐姐也在小狗的教学之后开始了打台球，小狗也被姐姐打爆了QAQ</div></div>
+  <div class="slide"><img src="kuanian.jpg"><div class="caption">跨年那天，在姐姐和我说出新年快乐时，小狗心里默念岁岁年年，永不分离</div></div>
+  <div class="slide"><img src="wanglian.jpg"><div class="caption">寒假开始后，小狗和姐姐开始了异地恋<br>虽然姐姐不在身边，但每次视频，小狗都能闻到姐姐的味道</div></div>
+  <div class="slide"><img src="jiezhan1.jpg"><div class="caption">第一次接姐姐回家，小狗在看到姐姐那一刻，只想把她抱在怀里不松开</div></div>
+  <div class="slide"><img src="kanhai.jpg"><div class="caption">第一次旅行——大连，姐姐第一次看海<br>她眼里的喜悦让小狗怦然心动</div></div>
+  <div class="slide"><img src="dalianchun.jpg"><div class="caption">25年的春天，是姐姐陪着我一起迎接，那天姐姐在我眼里就是春天本身</div></div>
+  <div class="slide"><img src="wenshentie.jpg"><div class="caption">那天在日新楼，姐姐笑着把纹身贴贴在我胳膊上，小狗嘴上拒绝但还是舍不得擦掉</div></div>
+  <div class="slide"><img src="xinghuajie.jpg"><div class="caption">杏花节那天，姐姐站在杏花中间，可是小狗的眼里，满园杏花都不如姐姐美</div></div>
+  <div class="slide"><img src="yinyuejie.jpg"><div class="caption">姐姐陪我看的第一次大型音乐节，那天台上是偶像，身边是我想要相伴一生的人</div></div>
+  <div class="slide"><img src="songhua.jpg"><div class="caption">那一天，姐姐拿着花找到我，小狗第一次收到花，姐姐说“我的小狗也要有自己的花”</div></div>
+  <div class="slide"><img src="changsha2.jpg"><div class="caption">25年的夏天，小狗和姐姐去了长沙，姐姐坐在岳麓书院，像是从历史中走出</div></div>
+  <div class="slide"><img src="tianmenshan.jpg"><div class="caption">在天门山上，小狗想说：对姐姐的爱高过崇峰，恒久如山</div></div>
+  <div class="slide"><img src="gouzhibaobao.jpg"><div class="caption">姐姐的朋友也开始接受小狗，送了我们钩织宝宝，小狗真的很幸运遇到姐姐</div></div>
+  <div class="slide"><img src="shenyang.png"><div class="caption">在沈阳教堂下，小狗想象未来会在教堂下亲手给姐姐带上婚戒</div></div>
+  <div class="slide"><img src="zhuangzao.jpg"><div class="caption">姐姐做了心心念念的妆造，在故宫里，小狗觉得姐姐就是最美的公主</div></div>
+  <div class="ending">
+    <h1>💌 致我最爱的姐姐 💌</h1>
+    <p>这一年，有姐姐，小狗的生活变得不一样了。<br>
+    姐姐让小狗有了依靠，也让他知道在疲累时有个肩膀。<br>
+    小狗期待接下来的每一个春夏秋冬，<br>
+    都能与姐姐并肩走过。</p>
+    <p style="margin-top: 40px;">—— 爱你的 小狗 🐶</p>
+  </div>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const ending = document.querySelector('.ending');
+    const intro = document.getElementById('intro');
+    const music = document.getElementById('bgm');
+    const toggle = document.getElementById('musicToggle');
+    const startButton = document.getElementById('startButton');
+    let current = 0;
+    startButton.addEventListener('click', () => {
+      intro.style.opacity = 0;
+      setTimeout(() => intro.style.display = "none", 1500);
+      slides[0].classList.add('active');
+      toggle.style.display = 'block';
+      music.play().catch(() => console.log("音乐需用户交互才能播放"));
+    });
+    function nextSlide() {
+      if (intro.style.display !== "none") return;
+      const currentSlide = slides[current];
+      currentSlide.classList.add('fade-out');
+      setTimeout(() => {
+        currentSlide.classList.remove('active', 'fade-out');
+        current++;
+        if (current < slides.length) {
+          slides[current].classList.add('active');
+        } else {
+          ending.classList.add('active');
+        }
+      }, 1000);
+    }
+    document.body.addEventListener('click', nextSlide);
+    toggle.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        toggle.textContent = "🔊 音乐：开";
+      } else {
+        music.pause();
+        toggle.textContent = "🔇 音乐：关";
+      }
+    });
+  </script>
+</body>
+</html>
